@@ -1,0 +1,303 @@
+[
+  {
+    "review_id": 1,
+    "sentiment": "delighted",
+    "store": "Kanata",
+    "date": "2023-01-01"
+  },
+  {
+    "review_id": 2,
+    "sentiment": "happy",
+    "store": "Orleans",
+    "date": "2023-02-15"
+  },
+  {
+    "review_id": 3,
+    "sentiment": "sad",
+    "store": "Downtown",
+    "date": "2023-03-05"
+  },
+  {
+    "review_id": 4,
+    "sentiment": "angry",
+    "store": "Sandy Hill",
+    "date": "2023-04-20"
+  },
+  {
+    "review_id": 5,
+    "sentiment": "happy",
+    "store": "The Glebe",
+    "date": "2023-05-12"
+  },
+  {
+    "review_id": 6,
+    "sentiment": "delighted",
+    "store": "Kanata",
+    "date": "2023-06-30"
+  },
+  {
+    "review_id": 7,
+    "sentiment": "sad",
+    "store": "Orleans",
+    "date": "2023-07-18"
+  },
+  {
+    "review_id": 8,
+    "sentiment": "happy",
+    "store": "Downtown",
+    "date": "2023-08-10"
+  },
+  {
+    "review_id": 9,
+    "sentiment": "angry",
+    "store": "Sandy Hill",
+    "date": "2023-09-03"
+  },
+  {
+    "review_id": 10,
+    "sentiment": "delighted",
+    "store": "The Glebe",
+    "date": "2023-10-22"
+  },
+  {
+    "review_id": 11,
+    "sentiment": "happy",
+    "store": "Kanata",
+    "date": "2023-11-05"
+  },
+  {
+    "review_id": 12,
+    "sentiment": "sad",
+    "store": "Orleans",
+    "date": "2023-12-12"
+  },
+  {
+    "review_id": 13,
+    "sentiment": "angry",
+    "store": "Downtown",
+    "date": "2023-01-23"
+  },
+  {
+    "review_id": 14,
+    "sentiment": "happy",
+    "store": "Sandy Hill",
+    "date": "2023-02-08"
+  },
+  {
+    "review_id": 15,
+    "sentiment": "delighted",
+    "store": "The Glebe",
+    "date": "2023-03-17"
+  },
+  {
+    "review_id": 16,
+    "sentiment": "angry",
+    "store": "Kanata",
+    "date": "2023-04-02"
+  },
+  {
+    "review_id": 17,
+    "sentiment": "happy",
+    "store": "Orleans",
+    "date": "2023-05-19"
+  },
+  {
+    "review_id": 18,
+    "sentiment": "delighted",
+    "store": "Downtown",
+    "date": "2023-06-28"
+  },
+  {
+    "review_id": 19,
+    "sentiment": "sad",
+    "store": "Sandy Hill",
+    "date": "2023-07-14"
+  },
+  {
+    "review_id": 20,
+    "sentiment": "happy",
+    "store": "The Glebe",
+    "date": "2023-08-27"
+  },
+  {
+    "review_id": 21,
+    "sentiment": "angry",
+    "store": "Kanata",
+    "date": "2023-09-08"
+  },
+  {
+    "review_id": 22,
+    "sentiment": "delighted",
+    "store": "Orleans",
+    "date": "2023-10-01"
+  },
+  {
+    "review_id": 23,
+    "sentiment": "sad",
+    "store": "Downtown",
+    "date": "2023-11-11"
+  },
+  {
+    "review_id": 24,
+    "sentiment": "happy",
+    "store": "Sandy Hill",
+    "date": "2023-12-29"
+  },
+  {
+    "review_id": 25,
+    "sentiment": "delighted",
+    "store": "The Glebe",
+    "date": "2023-01-15"
+  },
+  {
+    "review_id": 26,
+    "sentiment": "angry",
+    "store": "Kanata",
+    "date": "2023-02-03"
+  },
+  {
+    "review_id": 27,
+    "sentiment": "happy",
+    "store": "Orleans",
+    "date": "2023-03-20"
+  },
+  {
+    "review_id": 28,
+    "sentiment": "sad",
+    "store": "Downtown",
+    "date": "2023-04-10"
+  },
+  {
+    "review_id": 29,
+    "sentiment": "angry",
+    "store": "Sandy Hill",
+    "date": "2023-05-05"
+  },
+  {
+    "review_id": 30,
+    "sentiment": "happy",
+    "store": "The Glebe",
+    "date": "2023-06-15"
+  },
+  {
+    "review_id": 31,
+    "sentiment": "delighted",
+    "store": "Kanata",
+    "date": "2023-07-03"
+  },
+  {
+    "review_id": 32,
+    "sentiment": "sad",
+    "store": "Orleans",
+    "date": "2023-08-18"
+  },
+  {
+    "review_id": 33,
+    "sentiment": "happy",
+    "store": "Downtown",
+    "date": "2023-09-25"
+  },
+  {
+    "review_id": 34,
+    "sentiment": "angry",
+    "store": "Sandy Hill",
+    "date": "2023-10-12"
+  },
+  {
+    "review_id": 35,
+    "sentiment": "delighted",
+    "store": "The Glebe",
+    "date": "2023-11-28"
+  },
+  {
+    "review_id": 36,
+    "sentiment": "happy",
+    "store": "Kanata",
+    "date": "2023-12-08"
+  },
+  {
+    "review_id": 37,
+    "sentiment": "sad",
+    "store": "Orleans",
+    "date": "2023-01-30"
+  },
+  {
+    "review_id": 38,
+    "sentiment": "angry",
+    "store": "Downtown",
+    "date": "2023-02-12"
+  },
+  {
+    "review_id": 39,
+    "sentiment": "happy",
+    "store": "Sandy Hill",
+    "date": "2023-03-01"
+  },
+  {
+    "review_id": 40,
+    "sentiment": "delighted",
+    "store": "The Glebe",
+    "date": "2023-04-22"
+  },
+  {
+    "review_id": 41,
+    "sentiment": "angry",
+    "store": "Kanata",
+    "date": "2023-05-09"
+  },
+  {
+    "review_id": 42,
+    "sentiment": "happy",
+    "store": "Orleans",
+    "date": "2023-06-27"
+  },
+  {
+    "review_id": 43,
+    "sentiment": "sad",
+    "store": "Downtown",
+    "date": "2023-07-11"
+  },
+  {
+    "review_id": 44,
+    "sentiment": "delighted",
+    "store": "Sandy Hill",
+    "date": "2023-08-24"
+  },
+  {
+    "review_id": 45,
+    "sentiment": "happy",
+    "store": "The Glebe",
+    "date": "2023-09-05"
+  },
+  {
+    "review_id": 46,
+    "sentiment": "angry",
+    "store": "Kanata",
+    "date": "2023-10-17"
+  },
+  {
+    "review_id": 47,
+    "sentiment": "delighted",
+    "store": "Orleans",
+    "date": "2023-11-29"
+  },
+  {
+    "review_id": 48,
+    "sentiment": "sad",
+    "store": "Downtown",
+    "date": "2023-12-18"
+  },
+  {
+    "review_id": 49,
+    "sentiment": "angry",
+    "store": "Sandy Hill",
+    "date": "2023-01-10"
+  },
+  {
+    "review_id": 50,
+    "sentiment": "happy",
+    "store": "The Glebe",
+    "date": "2023-02-25"
+  }
+]
+
