@@ -20,14 +20,14 @@ Welcome to the OutStem front-end challenge. Submission instructions are listed b
 
 The challenge for this interview is to build a dashboard for the new pizza place "A Slice of Pi", who have just finished their first year of business in 2023, and want to see how their pizza sales performed. 
 
-For this challenge you have been provided 3 data sets, [order_data.json](order_data.json), [review_data.json](review_data.json), and [pricing_data.json](pricing_data.json). You will use the data in these files to generate various graphs as described in the Goals section
+For this challenge you have been provided 3 data sets, [order_data.json](data-sets/order_data.json), [review_data.json](data-sets/review_data.json), and [pricing_data.json](data-sets/pricing_data.json). You will use the data in these files to generate various graphs as described in the Goals section
 
 The design and layout of the website is totally up to you (feel free to use any UI libraries), though you will be judged on the look, feel, and usability of your application, so do your best to respect best practices in web design.
 
 In addition, you're also welcome to use any existing libraries to generate your graphs or implement other form elements.
 
 ## Data Sets
-The first data set [order_data.json](order_data.json) is a list of orders that were placed, has the following format:
+The first data set [order_data.json](data-sets/order_data.json) is a list of orders that were placed, has the following format:
 
 ```
 [
@@ -46,7 +46,7 @@ The first data set [order_data.json](order_data.json) is a list of orders that w
 ]
 ```
 
-The second data set [review_data.json](review_data.json) is a list of customer reviews, and has the following format:
+The second data set [review_data.json](data-sets/review_data.json) is a list of customer reviews, and has the following format:
 
 ```
 [
@@ -61,7 +61,7 @@ The second data set [review_data.json](review_data.json) is a list of customer r
 ]
 ```
 
-The third data set [pricing_data.json](pricing_data.json) describes the price for each pizza, first based on the type, and then based on the size
+The third data set [pricing_data.json](data-sets/pricing_data.json) describes the price for each pizza, first based on the type, and then based on the size
 
 **Sample:**
 ```
