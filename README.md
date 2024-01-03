@@ -72,6 +72,7 @@ The third data set [pricing_data.json](data-sets/pricing_data.json) describes th
     "L": 16
   },
   ...
+}
 ```
 
 
