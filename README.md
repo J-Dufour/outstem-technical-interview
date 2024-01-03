@@ -91,17 +91,17 @@ Add a simple bar chart showing how many orders were placed in each store (Kanata
 Add a display of the total money made in 2023 by computing the price of each pizza sold and adding them all.
 
 
-## Goal 5
-Create a line chart showing how much money was made in each month of 2023
+### Goal 5
+Create a line chart showing how much money was made by month in 2023
 
-## Goal 6
+### Goal 6
 To your chart from Goal 2, add the ability to filter the data by
 - pizza type
 - pizza size
 
 
 ### Goal 6
-Add a start and end date filter at the top of the page, and filter all the existing charts' data by these start and end dates
+Add a start and end date filter at the top of the page, and filter the charts from goals 1, 2, and 5 by these start and end dates
 
 
 
