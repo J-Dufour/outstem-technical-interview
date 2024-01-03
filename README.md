@@ -18,16 +18,16 @@ Welcome to the OutStem front-end challenge. Submission instructions are listed b
 
 ## The Challenge
 
-The challenge for this interview is to build a dashboard for the new pizza place "A Slice of Pi", who just finished their first year of business and want to see how they did. 
+The challenge for this interview is to build a dashboard for the new pizza place "A Slice of Pi", who have just finished their first year of business in 2023, and want to see how their pizza sales performed. 
 
-For this challenge you have been provided 2 data sets, `order_data.json` and `review_data.json`. You will use the data in these files to generate various graphs as described in the Goals section
+For this challenge you have been provided 3 data sets, `order_data.json`, `review_data.json`, and `pricing_data.json`. You will use the data in these files to generate various graphs as described in the Goals section
 
 The design and layout of the website is totally up to you (feel free to use any UI libraries), though you will be judged on the look, feel, and usability of your application, so do your best to respect best practices in web design.
 
 In addition, you're also welcome to use any existing libraries to generate your graphs or implement other form elements.
 
 ## Data Sets
-The first data set `order_data.json` has the following format:
+The first data set `order_data.json` is a list of orders that were placed, has the following format:
 
 ```
 [
@@ -46,7 +46,7 @@ The first data set `order_data.json` has the following format:
 ]
 ```
 
-The second data set `review_data.json` has the following format:
+The second data set `review_data.json` is a list of customer reviews, and has the following format:
 
 ```
 [
@@ -60,52 +60,57 @@ The second data set `review_data.json` has the following format:
 ]
 ```
 
+The third data set `pricing_data` describes the price for each pizza, first based on the type, and then based on the size
+
+**Sample:**
+```
+{
+  "Cheese": {
+    "S": 8,
+    "M": 12,
+    "L": 16
+  },
+  ...
+```
+
 
 ## Goals
 This challenge has multiple goals that increase in level of difficulty, implement as many of these goals as you are able to.
 
 
+
 ### Goal 1
-Fetch an easy, **true/false**, general knowledge question from the API, and print the response to the console
+Show a simple pie chart based on the review_data.json, showing how many reviews of each sentiment (happy, sad, etc) A Slice of Pi received in 2023
 
 
 ### Goal 2
+Add a simple bar chart showing how many orders were placed in each store (Kanata, Orleans... etc)
 
-Instead of printing to the console, display the question to the user, and allow them to select between the true and false options using whichever UI elements you think are best suited.
-
-
-### Goal 3
-If the user choses the correct answer, give them a success message, and the option to move on to the next stage of the game.
-
-If they chose the incorrect answer, give them a failure message including what the correct answer was, and have them restart the game.
 
 ### Goal 4
+Add a display of the total money made in 2023 by computing the price of each pizza sold and adding them all.
 
-Now fetch an easy **multiple choice** question from the general knowledge category. 
 
-Display the question on the screen for the user, and allow them to select their answer with whichever UI elements you think are best suited 
+## Goal 5
+Create a line chart showing how much money was made in each month of 2023
 
-### Goal 5
+## Goal 6
+To your chart from Goal 2, add the ability to filter the data by
+- pizza type
+- pizza size
 
-If the user choses the correct answer, give them a success message, and the option to move on to the next stage of the game.
-
-If they chose the incorrect answer, give them a failure message including what the correct answer was, and have them restart the game.
 
 ### Goal 6
+Add a start and end date filter at the top of the page, and filter all the existing charts' data by these start and end dates
 
-Repeat with goals 1-5 with medium, and then hard questions
 
-### Goal 7
-
-Build a nice congratulations page for users who won your quiz game!
 
 ## Bonus Challenges
 If you're done and looking for more challenges, here are some extra ideas!:
 
-- Give the user 2 extra lives instead of ending the game on the first failure
-- Add a points system for different question difficulties
-- Allow the user to select different categories for the game
-- Add animations!
+- Add any other helpful charts for a pizza business
+- Show off your design skills with a snazzy layout and header
+- Add animations to your page elements
 
 
 ## Your solution
@@ -127,9 +132,9 @@ You will be evaluated on:
 
 ## Submission
 
-Please submit your solution in the 2023 Fall interview GitHub repository via GitHub Issue.
+Please submit your solution in the 2024 Summer interview GitHub repository via GitHub Issue.
 
-1. Navigate to the following link (https://github.com/AES-Outreach/Winter-2024-Coop-Interviews/issues/new/choose) or:
+1. Navigate to the following link (https://github.com/AES-Outreach/Summer-2024-Coop-Interviews/issues/new/choose) or:
    1. Navigate to the challenge repository
    2. Click **Issues**
    3. Click **New Issue**

@@ -1,0 +1,59 @@
+name: Solution Submission
+description: Submit your OutStem coding challenge solution
+title: '[Submission]: YOUR_NAME coding challenge submission'
+assignees:
+  - ebivibe
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for completing the OutStem Coding Challenge! 🎉🎉
+
+        Please submit your solution using this form.
+  - type: input
+    id: contact
+    attributes:
+      label: Your Name
+      placeholder: ex. John Smith
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: Your Email
+      placeholder: ex. johnsmith@gmail.com
+    validations:
+      required: true
+  - type: input
+    id: source-url
+    attributes:
+      label: Source Code URL
+      description: Please submit your repo URL or repl.it URL.
+    validations:
+      required: true
+  - type: input
+    id: hosted-url
+    attributes:
+      label: Hosted URL
+      description: This is the URL for your hosted project.
+  - type: textarea
+    id: run-instructions
+    attributes:
+      label: Run instructions
+      description: Explain how to properly run your app.
+      placeholder: |
+        1. Do this...
+        2. Do that...
+        3. ...
+        4. Profit.
+  - type: textarea
+    id: goals-completed
+    attributes:
+      label: Goals Completed
+      description: Which goals did you complete?
+      placeholder: |
+        Ex. I completed goals 1 and 2, I started goal 3
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else you would like us to know?
