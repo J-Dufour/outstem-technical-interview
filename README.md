@@ -109,7 +109,7 @@ Add a start and end date filter at the top of the page, and filter the charts fr
 ## Bonus Challenges
 If you're done and looking for more challenges, here are some extra ideas!:
 
-- Add any other helpful charts for a pizza business
+- Explore further chart types to show the data in a more complex manner
 - Show off your design skills with a snazzy layout and header
 - Add animations to your page elements
 
