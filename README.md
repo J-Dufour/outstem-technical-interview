@@ -54,7 +54,8 @@ The second data set [review_data.json](review_data.json) is a list of customer r
         "review_id": integer,
         "sentiment": string, one of (delighted, happy, sad, angry),
         "store": string, one of (Kanata, Orleans,  Downtown, Sandy Hill, and The Glebe),
-        "date": string in the format YYYY-MM-DD
+        "date": string in the format YYYY-MM-DD,
+        "message": string
     },
     ...
 ]
