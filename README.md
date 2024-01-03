@@ -12,19 +12,19 @@
   </p>
 </p>
 
-# OutStem Front-end Challenge
+# OutStem Coding Challenge
 
-Welcome to the OutStem front-end challenge. Submission instructions are listed below. The deadline to submit this challenge is **Monday January 22nd, 9:00 AM**. We would like to emphasize that we are looking for effort, and that the challenge is just part of our discussion with you during the interview, so don’t worry if your solution is *hacky* or even if it doesn’t work, we want to see it!
+Welcome to the OutStem Coding challenge. Submission instructions are listed below. The deadline to submit this challenge is **Monday January 22nd, 9:00 AM**. We would like to emphasize that we are looking for effort, and that the challenge is just part of our discussion with you during the interview, so don’t worry if your solution is *hacky* or even if it doesn’t work, we want to see it!
 
 ## The Challenge
 
-The challenge for this interview is to build a dashboard for the new pizza place "A Slice of Pi", who have just finished their first year of business in 2023, and want to see how their pizza sales performed. 
+The challenge for this interview is to build a dashboard for the new pizza place "A Slice of Pi". They have just finished their first year of business (2023), and want to see how their pizza sales have performed.
 
 For this challenge you have been provided 3 data sets, [order_data.json](data-sets/order_data.json), [review_data.json](data-sets/review_data.json), and [pricing_data.json](data-sets/pricing_data.json). You will use the data in these files to generate various graphs as described in the Goals section
 
 The design and layout of the website is totally up to you (feel free to use any UI libraries), though you will be judged on the look, feel, and usability of your application, so do your best to respect best practices in web design.
 
-In addition, you're also welcome to use any existing libraries to generate your graphs or implement other form elements.
+In addition, you're welcome to use any existing libraries to generate your graphs or implement other form elements.
 
 ## Data Sets
 The first data set [order_data.json](data-sets/order_data.json) is a list of orders that were placed, has the following format:
