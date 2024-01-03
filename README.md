@@ -29,7 +29,7 @@ In addition, you're welcome to use any existing libraries to generate your graph
 ## Data Sets
 The first data set [order_data.json](data-sets/order_data.json) is a list of orders that were placed, has the following format:
 
-```json
+```
 [
     {
         "order_id": integer,
@@ -48,7 +48,7 @@ The first data set [order_data.json](data-sets/order_data.json) is a list of ord
 
 The second data set [review_data.json](data-sets/review_data.json) is a list of customer reviews, and has the following format:
 
-```json
+```
 [
     {
         "review_id": integer,
@@ -64,7 +64,7 @@ The second data set [review_data.json](data-sets/review_data.json) is a list of 
 The third data set [pricing_data.json](data-sets/pricing_data.json) describes the price for each pizza, first based on the type, and then based on the size
 
 **Sample:**
-```json
+```
 {
   "Cheese": {
     "S": 8,
