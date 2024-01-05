@@ -18,13 +18,13 @@ Welcome to the OutStem Coding challenge. Submission instructions are listed belo
 
 ## The Challenge
 
-The challenge for this interview is to build a dashboard for the new pizza place "A Slice of Pi". They have just finished their first year of business (2023), and want to see how their pizza sales have performed.
+The challenge for this interview is to build a dashboard for the new pizza place, "A Slice of Pi". They have just finished their first year of business (2023), and want to see how their pizza sales have performed.
 
-For this challenge you have been provided 3 data sets, [order_data.json](data-sets/order_data.json), [review_data.json](data-sets/review_data.json), and [pricing_data.json](data-sets/pricing_data.json). You will use the data in these files to generate various graphs as described in the Goals section
+For this challenge you have been provided 3 data sets, [order_data.json](data-sets/order_data.json), [review_data.json](data-sets/review_data.json), and [pricing_data.json](data-sets/pricing_data.json). You will use the data in these files to generate various graphs as described in the Goals section below
 
 The design and layout of the website is totally up to you (feel free to use any UI libraries), though you will be judged on the look, feel, and usability of your application, so do your best to respect best practices in web design.
 
-In addition, you're welcome to use any existing libraries to generate your graphs or implement other form elements.
+In addition, you're welcome to use any existing libraries to generate your graphs or implement other form elements. AI coding assistants are permitted but their use must be disclosed in your submission
 
 ## Data Sets
 The first data set [order_data.json](data-sets/order_data.json) is a list of orders that were placed, has the following format:
@@ -82,7 +82,7 @@ This challenge has multiple goals that increase in level of difficulty, implemen
 
 
 ### Goal 1
-Show a simple pie chart based on the review_data.json, showing how many reviews of each sentiment (happy, sad, etc) A Slice of Pi received in 2023
+Show a simple pie chart of the customer reviews, showing how many reviews of each sentiment (happy, sad, etc) A Slice of Pi received in 2023
 
 
 ### Goal 2
@@ -94,7 +94,7 @@ Add a display of the total money made in 2023 by computing the price of each piz
 
 
 ### Goal 4
-Create a line chart showing how much money was made by month in 2023
+Create a line chart showing how much money was made per month in 2023
 
 ### Goal 5
 To your chart from Goal 2, add the ability to filter the data by
@@ -103,7 +103,7 @@ To your chart from Goal 2, add the ability to filter the data by
 
 
 ### Goal 6
-Add a start and end date filter at the top of the page, and filter the charts from goals 1, 2, and 5 by these start and end dates
+Add a start and end date filter at the top of the page, and filter the charts from goals 1, 2, and 4 by these start and end dates
 
 
 
