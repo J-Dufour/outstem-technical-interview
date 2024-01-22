@@ -55,16 +55,19 @@ export default function Home() {
     return result;
   }
 
-  const reviewGraphData = sumByGroup(reviewData, 'sentiment');
-
+  const reviewPieGraphData = sumByGroup(reviewData, 'sentiment');
+  const orderBarGraphData = sumByGroup(orderData, 'store')
   return (
     <main>
       <div className="text-center py-3 text-xxl font-bold border-b-2">
         <p>Slice of pi</p>
       </div>
       <div className="flex flex-wrap w-full">
-        <StatCard title="Reviews">
-          <PieGraph data={reviewGraphData} semi_circ />
+        <StatCard title="Reviews by Sentiment">
+          <PieGraph data={reviewPieGraphData} semi_circ />
+        </StatCard>
+        <StatCard title="Orders by Store">
+          <BarGraph data={orderBarGraphData}/>
         </StatCard>
       </div>
     </main>
