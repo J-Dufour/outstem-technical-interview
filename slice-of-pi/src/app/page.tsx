@@ -88,7 +88,7 @@ export default function Home() {
   return (
     <main>
       <div className="text-center py-3 text-xxl font-bold border-b-2">
-        <p>Slice of pi</p>
+        <p>A Slice of Pi</p>
       </div>
       <h1 className="text-center font-extrabold text-6xl py-3">Dashboard</h1>
       <div className="flex flex-wrap w-full">
