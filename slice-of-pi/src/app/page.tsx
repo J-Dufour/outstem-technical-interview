@@ -36,6 +36,10 @@ export default function Home() {
     setPizzaTypeFilter(type.value);
   }
 
+  const resetDates = () => {
+    setStartDate(null);
+    setEndDate(null);
+  }
 
   //set active filters
   const reviewPieGraphFilter = (r: Review) => {
@@ -134,23 +138,24 @@ export default function Home() {
   const totalRevenue = revenueLineGraphData.reduce((a, b) => a + b.dep, 0);
 
   return (
-    <main>
+    <main className="bg-yellow-500 h-screen text-white">
       <div className="text-center py-3 text-xxl font-bold border-b-2">
         <p>A Slice of Pi</p>
       </div>
       <h1 className="text-center font-extrabold text-6xl py-3">Dashboard</h1>
-      <div className="flex flex-row-reverse mx-2">
+      <div className="flex flex-row-reverse mx-4 rounded-lg bg-yellow-600 w-fit p-2">
         <div className="mx-2">
           <p>End Date</p>
-          <DatePicker className="border" selected={endDate} onChange={(date) => setEndDate(date)} />
+          <DatePicker className="border text-black" selected={endDate} onChange={(date) => setEndDate(date)} />
         </div>
         <div className="mx-2">
           <p>Start Date</p>
-          <DatePicker className="border" selected={startDate} onChange={(date) => setStartDate(date)} />
+          <DatePicker className="border text-black" selected={startDate} onChange={(date) => setStartDate(date)} />
         </div>
 
         <div className="mx-2">
           <p>Filter by date range:</p>
+          <button className="rounded bg-yellow-500 py-1 px-2 hover:scale-105 ease-in-out duration-300" onClick={resetDates}>Reset</button>
         </div>
       </div>
       <div className="flex flex-wrap w-full">
