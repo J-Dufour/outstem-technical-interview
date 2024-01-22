@@ -2,9 +2,10 @@
 import Image from "next/image";
 import { getOrderData, getPricingData, getReviewData } from "./util/dataStore";
 import PieGraph from "./components/PieGraph";
-import { DataPoint } from "./util/types";
+import { DataPoint, Order, OrderItem, Review } from "./util/types";
 import StatCard from "./components/StatCard";
 import BarGraph from "./components/BarGraph";
+import LineGraph from "./components/LineGraph";
 
 const REVIEW_COLOURS: { [key: string]: string } = {
   'angry': '#db0000',
@@ -13,50 +14,76 @@ const REVIEW_COLOURS: { [key: string]: string } = {
   'delighted': '#006e30'
 }
 
-type Order = {
-  order_id: number,
-  store: 'Kanata' | 'Orleans' | 'Downtown' | 'Sandy Hill' | 'The Glebe',
-  items: {
-    type: 'Cheese' | 'Pepperoni' | 'Deluxe' | 'Hawaiian' | 'Meatlovers',
-    size: 'L' | 'M' | 'S',
-  }[],
-  date: string
-}
-
-type Review = {
-  review_id: number,
-  sentiment: 'delighted' | 'happy' | 'sad' | 'angry',
-  store: 'Kanata' | 'Orleans' | 'Downtown' | 'Sandy Hill' | 'The Glebe',
-  date: string,
-  message: string
-}
 
 export default function Home() {
   const orderData = getOrderData();
   const pricingData = getPricingData();
   const reviewData = getReviewData() as Review[];
 
+  const tableToDataPoints = (table : {[key: string]: number}) => {
+    const result : DataPoint[] = [];
+    for (const key in table) {
+      result.push({ ind: key, dep: table[key] });
+    }
+    return result;
+  }
+
   const sumByGroup = (data: {[key: string]: any}[], groupKey: string): DataPoint[] => {
     const sum: { [key: string]: number } = {}; // to add up reviews
-    const result: DataPoint[] = []; // to return
+    
 
     data.forEach((entry: {[key: string]: any}) => {
       // add key to sum if non-existent
       if (!(entry[groupKey] in sum)) sum[entry[groupKey]] = 0;
-      //add to sum
+      // add to sum
       sum[entry[groupKey]]++;
     })
 
     // generate DataPoint array
-    for (const key in sum) {
-      result.push({ ind: key, dep: sum[key], colour: REVIEW_COLOURS[key]})
-    }
-
+    const result: DataPoint[] = tableToDataPoints(sum);
+    // add colour
+    result.forEach((point) => {point.colour = REVIEW_COLOURS[point.ind]});
+    // return
     return result;
   }
 
+  const sumOrderCostsByMonth = (data: Order[]): DataPoint[] => {
+    const sumOrderItems = (items : OrderItem[]): number => {
+      return items.map((i) => pricingData[i.type][i.size])
+                  .reduce((x,y) => x + y, 0); // sum up all prices
+    }
+
+    const monthTable : {[key: string] : number} = {
+      '01': 0,
+      '02': 0,
+      '03': 0,
+      '04': 0,
+      '05': 0,
+      '06': 0,
+      '07': 0,
+      '08': 0,
+      '09': 0,
+      '10': 0,
+      '11': 0,
+      '12': 0,
+    } // per-month total of orders
+
+    
+
+    data.forEach((order: Order) => {
+      const month = order.date.substring(5,7); // grab the 'MM' from 'YYYY-MM-DD'
+      monthTable[month] += sumOrderItems(order.items); // add to per-month sum
+    })
+
+    //generate data points, sort ascending, and return
+    return tableToDataPoints(monthTable).sort((a,b) => a.ind < b.ind ? -1 : 1);
+  }
+
+
   const reviewPieGraphData = sumByGroup(reviewData, 'sentiment');
-  const orderBarGraphData = sumByGroup(orderData, 'store')
+  const orderBarGraphData = sumByGroup(orderData, 'store');
+  const revenueLineGraphData = sumOrderCostsByMonth(orderData);
+
   return (
     <main>
       <div className="text-center py-3 text-xxl font-bold border-b-2">
@@ -68,6 +95,9 @@ export default function Home() {
         </StatCard>
         <StatCard title="Orders by Store">
           <BarGraph data={orderBarGraphData}/>
+        </StatCard>
+        <StatCard title="Monthly Revenue">
+          <LineGraph data={revenueLineGraphData} xAxis="Month" yAxis="Revenue ($)"/>
         </StatCard>
       </div>
     </main>
