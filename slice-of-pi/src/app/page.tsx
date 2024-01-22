@@ -4,6 +4,7 @@ import { getOrderData, getPricingData, getReviewData } from "./util/dataStore";
 import PieGraph from "./components/PieGraph";
 import { DataPoint } from "./util/types";
 import StatCard from "./components/StatCard";
+import BarGraph from "./components/BarGraph";
 
 const REVIEW_COLOURS: { [key: string]: string } = {
   'angry': '#db0000',
@@ -14,9 +15,9 @@ const REVIEW_COLOURS: { [key: string]: string } = {
 
 type Order = {
   order_id: number,
-  store: string,
+  store: 'Kanata' | 'Orleans' | 'Downtown' | 'Sandy Hill' | 'The Glebe',
   items: {
-    type: string
+    type: 'Cheese' | 'Pepperoni' | 'Deluxe' | 'Hawaiian' | 'Meatlovers',
     size: 'L' | 'M' | 'S',
   }[],
   date: string
@@ -24,8 +25,8 @@ type Order = {
 
 type Review = {
   review_id: number,
-  sentiment: string,
-  store: string,
+  sentiment: 'delighted' | 'happy' | 'sad' | 'angry',
+  store: 'Kanata' | 'Orleans' | 'Downtown' | 'Sandy Hill' | 'The Glebe',
   date: string,
   message: string
 }
@@ -35,26 +36,26 @@ export default function Home() {
   const pricingData = getPricingData();
   const reviewData = getReviewData() as Review[];
 
-  const aggregateReviewData = (data: Review[]): DataPoint[] => {
+  const sumByGroup = (data: {[key: string]: any}[], groupKey: string): DataPoint[] => {
     const sum: { [key: string]: number } = {}; // to add up reviews
     const result: DataPoint[] = []; // to return
 
-    data.forEach((review: Review) => {
-      // add key if non-existent
-      if (!(review.sentiment in sum)) sum[review.sentiment] = 0;
+    data.forEach((entry: {[key: string]: any}) => {
+      // add key to sum if non-existent
+      if (!(entry[groupKey] in sum)) sum[entry[groupKey]] = 0;
       //add to sum
-      sum[review.sentiment]++;
+      sum[entry[groupKey]]++;
     })
 
     // generate DataPoint array
     for (const key in sum) {
-      result.push({ ind: key, dep: sum[key], colour: REVIEW_COLOURS[key] ?? '#a3a3a3' })
+      result.push({ ind: key, dep: sum[key], colour: REVIEW_COLOURS[key]})
     }
 
     return result;
   }
 
-  const reviewGraphData = aggregateReviewData(reviewData);
+  const reviewGraphData = sumByGroup(reviewData, 'sentiment');
 
   return (
     <main>
