@@ -83,6 +83,7 @@ export default function Home() {
   const reviewPieGraphData = sumByGroup(reviewData, 'sentiment');
   const orderBarGraphData = sumByGroup(orderData, 'store');
   const revenueLineGraphData = sumOrderCostsByMonth(orderData);
+  const totalRevenue = revenueLineGraphData.reduce((a,b) => a + b.dep, 0);
 
   return (
     <main>
@@ -95,6 +96,9 @@ export default function Home() {
         </StatCard>
         <StatCard title="Orders by Store">
           <BarGraph data={orderBarGraphData} xAxis="Store" yAxis="Order Count"/>
+        </StatCard>
+        <StatCard title="Total Revenue for Current Year">
+          <p className="font-bold text-6xl text-center pt-8">${totalRevenue}</p>
         </StatCard>
         <StatCard title="Monthly Revenue">
           <LineGraph data={revenueLineGraphData} xAxis="Month" yAxis="Revenue ($)"/>
