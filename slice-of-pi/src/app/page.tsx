@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getOrderData, getPricingData, getReviewData } from "./util/dataStore";
 import PieGraph from "./components/PieGraph";
 import { DataPoint } from "./util/types";
+import StatCard from "./components/StatCard";
 
 const REVIEW_COLOURS: { [key: string]: string } = {
   'angry': '#db0000',
@@ -57,11 +58,13 @@ export default function Home() {
 
   return (
     <main>
-      <div className="text-center py-3 font-bold border-b-2">
+      <div className="text-center py-3 text-xxl font-bold border-b-2">
         <p>Slice of pi</p>
       </div>
-      <div>
-        <PieGraph data={reviewGraphData} semi_circ />
+      <div className="flex flex-wrap w-full">
+        <StatCard title="Reviews">
+          <PieGraph data={reviewGraphData} semi_circ />
+        </StatCard>
       </div>
     </main>
   );
