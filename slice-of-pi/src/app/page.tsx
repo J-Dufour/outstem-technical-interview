@@ -6,10 +6,12 @@ import { DataPoint, Order, OrderItem, Review } from "./util/types";
 import StatCard from "./components/StatCard";
 import BarGraph from "./components/BarGraph";
 import LineGraph from "./components/LineGraph";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import ReactDropdown, { Option } from "react-dropdown";
 import 'react-dropdown/style.css';
+import DatePicker from "react-datepicker";
 
+import "react-datepicker/dist/react-datepicker.css";
 const REVIEW_COLOURS: { [key: string]: string } = {
   'angry': '#db0000',
   'sad': '#0050db',
@@ -24,6 +26,9 @@ export default function Home() {
   const [pizzaSizeFilter, setPizzaSizeFilter] = useState("None");
   const [pizzaTypeFilter, setPizzaTypeFilter] = useState("None");
 
+  const [startDate, setStartDate] = useState(null as Date | null);
+  const [endDate, setEndDate] = useState(null as Date | null);
+
   const changePizzaSize = (size: Option) => {
     setPizzaSizeFilter(size.value);
   }
@@ -31,12 +36,29 @@ export default function Home() {
     setPizzaTypeFilter(type.value);
   }
 
+
   //set active filters
+  const reviewPieGraphFilter = (r: Review) => {
+    if (startDate !== null && new Date(r.date) < startDate) return false;
+    if (endDate !== null && new Date(r.date) > endDate) return false;
+
+    return true;
+  }
+
   const orderBarGraphFilter = (o: Order) => {
     if (pizzaSizeFilter !== "None" && !o.items.some(i => pizzaSizeFilter === i.size)) return false;
     if (pizzaTypeFilter !== "None" && !o.items.some(i => pizzaTypeFilter === i.type)) return false;
+    if (startDate !== null && new Date(o.date) < startDate) return false;
+    if (endDate !== null && new Date(o.date) > endDate) return false;
 
-    return true
+    return true;
+  }
+
+  const revenueLineGraphFilter = (o: Order) => {
+    if (startDate !== null && new Date(o.date) < startDate) return false;
+    if (endDate !== null && new Date(o.date) > endDate) return false;
+
+    return true;
   }
 
 
@@ -69,10 +91,10 @@ export default function Home() {
     // add colour
     result.forEach((point) => { point.colour = REVIEW_COLOURS[point.ind] });
     // return
-    return result.sort((a,b) => a.ind < b.ind ? -1 : 1);
+    return result.sort((a, b) => a.ind < b.ind ? -1 : 1);
   }
 
-  const sumOrderCostsByMonth = (data: Order[]): DataPoint[] => {
+  const sumOrderCostsByMonth = (data: Order[], itemFilter: (o: any) => boolean = () => true): DataPoint[] => {
     const sumOrderItems = (items: OrderItem[]): number => {
       return items.map((i) => pricingData[i.type][i.size])
         .reduce((x, y) => x + y, 0); // sum up all prices
@@ -95,7 +117,8 @@ export default function Home() {
 
 
 
-    data.forEach((order: Order) => {
+    data.filter(itemFilter)
+    .forEach((order: Order) => {
       const month = order.date.substring(5, 7); // grab the 'MM' from 'YYYY-MM-DD'
       monthTable[month] += sumOrderItems(order.items); // add to per-month sum
     })
@@ -105,9 +128,9 @@ export default function Home() {
   }
 
 
-  const reviewPieGraphData = sumByGroup(reviewData, 'sentiment');
+  const reviewPieGraphData = sumByGroup(reviewData, 'sentiment', reviewPieGraphFilter);
   const orderBarGraphData = sumByGroup(orderData, 'store', orderBarGraphFilter);
-  const revenueLineGraphData = sumOrderCostsByMonth(orderData);
+  const revenueLineGraphData = sumOrderCostsByMonth(orderData, revenueLineGraphFilter);
   const totalRevenue = revenueLineGraphData.reduce((a, b) => a + b.dep, 0);
 
   return (
@@ -116,8 +139,19 @@ export default function Home() {
         <p>A Slice of Pi</p>
       </div>
       <h1 className="text-center font-extrabold text-6xl py-3">Dashboard</h1>
-      <div className="flex">
+      <div className="flex flex-row-reverse mx-2">
+        <div className="mx-2">
+          <p>End Date</p>
+          <DatePicker className="border" selected={endDate} onChange={(date) => setEndDate(date)} />
+        </div>
+        <div className="mx-2">
+          <p>Start Date</p>
+          <DatePicker className="border" selected={startDate} onChange={(date) => setStartDate(date)} />
+        </div>
 
+        <div className="mx-2">
+          <p>Filter by date range:</p>
+        </div>
       </div>
       <div className="flex flex-wrap w-full">
         <StatCard title="Reviews by Sentiment">
@@ -132,7 +166,7 @@ export default function Home() {
             <BarGraph data={orderBarGraphData} xAxis="Store" yAxis="Order Count" />
           </>
         </StatCard>
-        <StatCard title="Total Revenue for Current Year">
+        <StatCard title="Total Revenue for Current Date Range">
           <p className="font-bold text-6xl text-center pt-8">${totalRevenue}</p>
         </StatCard>
         <StatCard title="Monthly Revenue">
