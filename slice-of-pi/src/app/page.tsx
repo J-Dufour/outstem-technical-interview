@@ -94,7 +94,7 @@ export default function Home() {
           <PieGraph data={reviewPieGraphData} semi_circ />
         </StatCard>
         <StatCard title="Orders by Store">
-          <BarGraph data={orderBarGraphData}/>
+          <BarGraph data={orderBarGraphData} xAxis="Store" yAxis="Order Count"/>
         </StatCard>
         <StatCard title="Monthly Revenue">
           <LineGraph data={revenueLineGraphData} xAxis="Month" yAxis="Revenue ($)"/>
